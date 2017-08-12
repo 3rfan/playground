@@ -21,7 +21,7 @@
         return `rgb(${r}, 0, ${g})`;
     }
 
-    $main.innerHTML = createGrid(32, 10, 2);
+    $main.innerHTML = createGrid(64, 10, 2);
 
     for (let item of document.querySelectorAll('.item')) {
         item.addEventListener('mouseover', function(event) {

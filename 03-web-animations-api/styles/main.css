@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    perspective: 1000px;
+    background-color: #444;
+}
+
+.plane {
+    position: absolute;
+    background-color: greenyellow;
+    border: 1px solid rgba(255, 255, 255, .3);
+}
+
+.cube {
+    transform-style: preserve-3d;
+    position: absolute;
+}
+
+.container {
+    position: absolute;
+    transform-style: preserve-3d;
+}

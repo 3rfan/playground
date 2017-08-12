@@ -1,0 +1,346 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #444;
+}
+
+.pikachu {
+    position: relative;
+    top: 40px;
+    left: calc(50% - 50px);
+    width: 100px;
+    transform: scale(0.8);
+}
+.pikachu:hover .pikachu-mouth-open {
+    height: 15px;
+}
+.pikachu:hover .pikachu-ear-right {
+    animation: shakeEarRight .2s linear;
+}
+.pikachu:hover .pikachu-ear-left {
+    animation: shakeEarLeft .2s linear;
+}
+.pikachu:hover .pikachu-eye-left,
+.pikachu:hover .pikachu-eye-right {
+    background: none;
+    border-top: 6px solid #000;
+    top: 35px;
+    transform: scaleY(0.5);
+}
+.pikachu:hover .pikachu-eye-left::before, .pikachu:hover .pikachu-eye-left::after,
+.pikachu:hover .pikachu-eye-right::before,
+.pikachu:hover .pikachu-eye-right::after {
+    display: none;
+}
+
+.pikachu-face,
+.pikachu-chin,
+.pikachu-torso,
+.pikachu-ear-right,
+.pikachu-ear-left,
+.pikachu-arm-right,
+.pikachu-arm-left,
+.pikachu-foot-right,
+.pikachu-foot-left,
+.pikachu-tail-part {
+    background-color: #f4ce42;
+}
+
+.pikachu-head {
+    position: relative;
+    z-index: 5;
+    animation: idle 1.5s infinite;
+}
+
+.pikachu-face {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.pikachu-chin {
+    position: absolute;
+    bottom: 0px;
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 75%;
+    transform: scaleX(1.05);
+    border-radius: 50%;
+    border-bottom: 1px solid #000;
+}
+
+.pikachu-eye-right,
+.pikachu-eye-left {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.pikachu-eye-right {
+    top: 30px;
+    right: 20px;
+}
+.pikachu-eye-right::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.pikachu-eye-left {
+    top: 30px;
+    left: 20px;
+}
+.pikachu-eye-left::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.pikachu-cheek-right,
+.pikachu-cheek-left {
+    position: absolute;
+    top: 52px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #ff2e2b;
+}
+
+.pikachu-cheek-right {
+    right: 5px;
+}
+
+.pikachu-cheek-left {
+    left: 5px;
+}
+
+.pikachu-nose {
+    position: absolute;
+    top: 55px;
+    left: calc(50% - 2px);
+    width: 4px;
+    height: 2px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.pikachu-mouth {
+    position: absolute;
+    top: 55px;
+    left: 50%;
+}
+.pikachu-mouth::before, .pikachu-mouth::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 15px;
+    border-bottom: 1px solid #000;
+    border-radius: 40%;
+    background-color: #f4ce42;
+}
+.pikachu-mouth::before {
+    left: -12px;
+}
+.pikachu-mouth::after {
+    right: -12px;
+}
+
+.pikachu-ear-right,
+.pikachu-ear-left {
+    width: 20px;
+    height: 20px;
+    border-radius: 30px;
+    position: absolute;
+    top: 0px;
+    transform-origin: bottom;
+    border-top: 4px solid #000;
+}
+
+.pikachu-ear-left {
+    left: 10px;
+    transform: rotate(-40deg) scaleY(4);
+}
+
+.pikachu-ear-right {
+    right: 10px;
+    transform: rotate(40deg) scaleY(4);
+}
+
+.pikachu-torso {
+    position: relative;
+    top: -30px;
+    left: 1px;
+    width: 100px;
+    height: 80px;
+    border-radius: 50% 50% 40% 40%;
+    border: 1px solid #000;
+    transform: scaleY(1.2);
+}
+
+.pikachu-body {
+    position: relative;
+}
+
+.pikachu-arm-right,
+.pikachu-arm-left {
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    top: -5px;
+    border-width: 0 1px 2px 1px;
+    border-style: solid;
+    border-color: #000;
+    border-radius: 20% 20% 40% 40%;
+}
+
+.pikachu-arm-right {
+    left: 10px;
+    transform: rotateZ(-20deg);
+}
+
+.pikachu-arm-left {
+    right: 10px;
+    transform: rotateZ(30deg);
+}
+
+.pikachu-foot-right,
+.pikachu-foot-left {
+    width: 18px;
+    height: 30px;
+    position: absolute;
+    bottom: 5px;
+    border-radius: 10% 10% 50% 50%;
+    border: 1px solid #000;
+}
+
+.pikachu-foot-right {
+    right: 10px;
+    transform: rotate(-30deg);
+}
+
+.pikachu-foot-left {
+    left: 10px;
+    transform: rotate(30deg);
+}
+
+.pikachu-mouth-open {
+    position: absolute;
+    top: 65px;
+    left: calc(50% - 10px);
+    width: 20px;
+    height: 0;
+    border-radius: 0 0 50% 50%;
+    background-color: #ea2a4d;
+}
+
+.pikachu-tail-part {
+    position: absolute;
+}
+.pikachu-tail-part.part-one {
+    width: 15px;
+    bottom: 20px;
+    left: 80px;
+    height: 70px;
+    transform: rotate(70deg);
+    border-radius: 20% 20% 0 0;
+}
+.pikachu-tail-part.part-two {
+    width: 15px;
+    bottom: 62px;
+    left: 108px;
+    height: 30px;
+    transform: rotate(-15deg);
+    border-radius: 0 0 30% 30%;
+}
+.pikachu-tail-part.part-three {
+    width: 15px;
+    bottom: 78px;
+    left: 118px;
+    height: 50px;
+    transform: rotate(55deg) scaleX(1.8) skewY(60deg);
+    border-radius: 0 0 50% 50%;
+}
+
+.pikachu-body-upper {
+    animation: idle 1.5s .2s infinite;
+}
+
+.pikachu-tail {
+    animation: shakeTail 2s infinite;
+    position: absolute;
+    bottom: 0px;
+}
+
+.info-text {
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: Helvetica, Arial;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    margin-top: 30px;
+}
+
+@keyframes idle {
+    0% {
+        transform: translateY(1px);
+    }
+    50% {
+        transform: translateY(-1px);
+    }
+    100% {
+        transform: translateY(1px);
+    }
+}
+@keyframes shakeEarRight {
+    0% {
+        transform: rotate(45deg) scaleY(4);
+    }
+    50% {
+        transform: translateY(40deg) scaleY(4);
+    }
+    100% {
+        transform: translateY(45deg) scaleY(4);
+    }
+}
+@keyframes shakeEarLeft {
+    0% {
+        transform: rotate(-45deg) scaleY(4);
+    }
+    50% {
+        transform: translateY(-40deg) scaleY(4);
+    }
+    100% {
+        transform: translateY(-45deg) scaleY(4);
+    }
+}
+@keyframes shakeTail {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
